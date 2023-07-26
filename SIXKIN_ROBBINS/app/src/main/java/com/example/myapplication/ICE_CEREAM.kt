@@ -2,7 +2,7 @@ package com.example.myapplication
 
 class ICE_CEREAM : menu() {
 
-    fun operation(name:String, price:Double, info:String){
+    fun operation(){
 
         val cream = ice("바닐라", 3.0,"누구나 아는 그 맛")
         val cream1 = ice("베리베리 스트로베리", 3.5,"진한 딸기맛 아이스크림")

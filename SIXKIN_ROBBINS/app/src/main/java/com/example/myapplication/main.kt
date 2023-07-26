@@ -12,11 +12,26 @@ fun main(){
 
     while(true){
         println("[1]아이스크림, [2]빙수, [3]케이크, [4]음료")
-        var selectnumber= readln()!!.toInt()
+        var selectnumber= readLine()!!.toInt()
 
         when(selectnumber){
             1 -> {
-                selectmenu(1, icecream)
+                selectmenu(1)
+                break
+            }
+
+            2 -> {
+                selectmenu(2)
+                break
+            }
+
+            3 -> {
+                selectmenu(3)
+                break
+            }
+
+            4 -> {
+                selectmenu(4)
                 break
             }
             else -> {
@@ -30,15 +45,28 @@ fun main(){
 
     }
 
-fun selectmenu(selectmenu: Int, icecream: String){
+fun selectmenu(selectnumber: Int){
     var ice = ICE_CEREAM()
     var bin = BING_SU()
     var cak = CAKE()
     var bev = BEVERAGE()
 
-    if(selectmenu == 1){
+    if(selectnumber == 1){
         ice.operation()
     }
+
+    else if(selectnumber == 2){
+        bin.operation()
+    }
+
+    else if(selectnumber == 3){
+        cak.operation()
+    }
+
+    else if(selectnumber == 4){
+        bev.operation()
+    }
+
     else {
         println("다시입력해주세요.")
     }

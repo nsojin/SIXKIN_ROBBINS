@@ -1,7 +1,7 @@
 package com.example.myapplication
 
 class BEVERAGE : menu() {
-    fun operation(name:String,price:Double,info:String){
+    fun operation(){
 
         var coffee = drink("아메리카노", 2.0,"전국민 피로회복제")
         val coffee1 = drink("라떼는말이야", 3.5,"라떼는말이야 2:2:2였어")

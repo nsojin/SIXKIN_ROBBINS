@@ -1,7 +1,7 @@
 package com.example.myapplication
 
 class CAKE : menu(){
-    fun operation(name:String,price:Double,info:String){
+    fun operation(){
 
         val icecake = cake("수줍은 웰시코기의 숨바꼭질", 2.0,"궁디팡팡 웰시코기의 귀여운 뒷모습이 돋보이는 아이스크림 케이크")
         val icecake1 = cake("아기상어", 3.5,"전세계의 슈퍼스타 아기상어 아이스크림 케이크")
