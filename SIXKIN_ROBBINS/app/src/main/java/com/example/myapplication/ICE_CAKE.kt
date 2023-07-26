@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class CAKE : menu(){
+class ICE_CAKE : menu(){
     fun operation(){
 
         val icecake = cake("수줍은 웰시코기의 숨바꼭질", 2.0,"궁디팡팡 웰시코기의 귀여운 뒷모습이 돋보이는 아이스크림 케이크")
