@@ -31,9 +31,13 @@ fun main(){
     }
 
 fun selectmenu(selectmenu: Int, icecream: String){
-    var ice = ICECREAM()
+    var ice = ICE_CEREAM()
+    var bin = BING_SU()
+    var cak = CAKE()
+    var bev = BEVERAGE()
+
     if(selectmenu == 1){
-        ice.operation(icecream)
+        ice.operation()
     }
     else {
         println("다시입력해주세요.")
