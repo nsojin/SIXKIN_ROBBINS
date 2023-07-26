@@ -45,10 +45,10 @@ fun main(){
 }
 
 fun selectmenu(selectnumber: Int){
-    var ice = ICE_CEREAM()
-    var bin = BING_SU()
-    var cak = ICE_CAKE()
-    var bev = BEVERAGE()
+    var ice = Ice(name= "", price = 0.0, info = "")
+    var bin = BingSu(name= "", price = 0.0, info = "")
+    var cak = Cake(name= "", price = 0.0, info = "")
+    var bev = Drink(name= "", price = 0.0, info = "")
 
     if(selectnumber == 1){
         ice.operation()
