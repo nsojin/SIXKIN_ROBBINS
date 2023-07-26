@@ -1,5 +1,4 @@
 package com.example.myapplication
-
 fun main(){
     val storename = "SIXKIN ROBBINS"
 
@@ -43,12 +42,12 @@ fun main(){
 
 
 
-    }
+}
 
 fun selectmenu(selectnumber: Int){
     var ice = ICE_CEREAM()
     var bin = BING_SU()
-    var cak = CAKE()
+    var cak = ICE_CAKE()
     var bev = BEVERAGE()
 
     if(selectnumber == 1){
@@ -107,6 +106,5 @@ fun displayInfo(storename:String, icecream:String, bingsu:String, cake:String, b
     println("")
 
 }
-
 
 
