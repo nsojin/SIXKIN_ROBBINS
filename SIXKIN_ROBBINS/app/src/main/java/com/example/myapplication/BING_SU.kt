@@ -3,11 +3,7 @@ package com.example.myapplication
 import com.example.bingsu.bingsu
 
 class BING_SU : menu() {
-    fun operation(name:String,price:Double,info:String){
-
-        var name:String
-        var price:Double
-        var info:String
+    fun operation(){
 
         val ShavedIce = bingsu("팥빙수", 5.0,"빙수의 원조")
         val ShavedIce1 = bingsu("망고빙수", 5.5,"달콤한 빙수의 정석 망고빙수")
@@ -15,6 +11,7 @@ class BING_SU : menu() {
         val ShavedIce3 = bingsu("치즈빙수", 5.5,"어디든 다 잘어울리는 치즈의 매력")
         val ShavedIce4 = bingsu("인절미빙수", 5.5,"이에 달라붙어 사르르 녹는 매력의 인절미빙수")
         val ShavedIce5 = bingsu("요거트빙수", 5.5,"장 건강까지 생각한 요거트빙수")
+
 
         println("==========================음료를 선택해주세요.=========================")
         println("1. 빙수 이름:${ShavedIce.name} ㅣ가격:${ShavedIce.price} ㅣ설명:${ShavedIce.info}")
