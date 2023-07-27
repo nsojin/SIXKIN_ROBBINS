@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class Cake(val name:String,val price:Double,val info:String) : menu(){
+class Cake(val name:String,val price:Double,val info:String) {
     fun operation(){
 
         val Corgi = Cake("수줍은 웰시코기의 숨바꼭질", 2.0,"궁디팡팡 웰시코기의 귀여운 뒷모습이 돋보이는 아이스크림 케이크")
@@ -11,6 +11,7 @@ class Cake(val name:String,val price:Double,val info:String) : menu(){
         val Loopy = Cake("루피", 3.5,"잔망미 넘치는 사랑스러운 잔망루피 아이스크림 케이크")
 
         println("=========================케이크를 선택해주세요.=========================")
+        println("0. 뒤로가기")
         println("1. 케이크 이름:${Corgi.name} ㅣ가격:${Corgi.price} ㅣ설명:${Corgi.info}")
         println("2. 케이크 이름:${Shark.name}ㅣ가격:${Shark.price}ㅣ설명:${Shark.info}")
         println("3. 케이크 이름:${Ryan.name}ㅣ가격:${Ryan.price}ㅣ설명:${Ryan.info}")
@@ -21,13 +22,17 @@ class Cake(val name:String,val price:Double,val info:String) : menu(){
         val choice = readLine()?.toInt()
 
         when (choice) {
+            0 -> back()
             1 -> order(Corgi)
             2 -> order(Shark)
             3 -> order(Ryan)
             4 -> order(Apeach)
             5 -> order(Pororo)
             6 -> order(Loopy)
-            else -> println("다시 선택해 주세요.")
+            else -> {
+                println("다시 주문해 주세요")
+                operation()
+            }
         }
     }
 

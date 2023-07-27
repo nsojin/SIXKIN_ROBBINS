@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class Ice(val name:String,val price:Double,val info:String) : menu() {
+class Ice(val name:String,val price:Double,val info:String)  {
 
     fun operation(){
 
@@ -12,6 +12,7 @@ class Ice(val name:String,val price:Double,val info:String) : menu() {
         val AllthatMelona = Ice("올때 메로나", 3.0,"메로나는 사실 참외맛이죠")
 
         println("==========================아이스크림을 선택해주세요.=========================")
+        println("0. 뒤로가기")
         println("1. 아이스크림 이름:${Vanilla.name} ㅣ가격:${Vanilla.price} ㅣ설명:${Vanilla.info}")
         println("2. 아이스크림 이름:${StrawBerry.name}ㅣ가격:${StrawBerry.price}ㅣ설명:${StrawBerry.info}")
         println("3. 아이스크림 이름:${DadEarth.name}ㅣ가격:${DadEarth.price}ㅣ설명:${DadEarth.info}")
@@ -22,13 +23,18 @@ class Ice(val name:String,val price:Double,val info:String) : menu() {
         val choice = readLine()?.toInt()
 
         when (choice) {
+            0 -> back()
             1 -> order(Vanilla)
             2 -> order(StrawBerry)
             3 -> order(DadEarth)
             4 -> order(MintChoco)
             5 -> order(ShootingStar)
             6 -> order(AllthatMelona)
-            else -> println("다시 선택해 주세요.")
+
+            else -> {
+                println("다시 주문해 주세요")
+                operation()
+            }
         }
     }
 
@@ -36,5 +42,6 @@ class Ice(val name:String,val price:Double,val info:String) : menu() {
         println("선택하신 아이스크림: ${Ice.name}")
         println("가격: ${Ice.price}")
         println("주문이 완료되었습니다.")
+
     }
 }
