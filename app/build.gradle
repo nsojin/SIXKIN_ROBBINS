@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace 'com.example.icecreamcake'
+    namespace 'com.example.myapplication'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.icecreamcake"
-        minSdk 30
+        applicationId "com.example.myapplication"
+        minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"

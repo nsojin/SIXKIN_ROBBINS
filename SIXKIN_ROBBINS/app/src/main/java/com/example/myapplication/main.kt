@@ -1,5 +1,6 @@
 package com.example.myapplication
-fun main(){
+
+fun main() {
     val storename = "SIXKIN ROBBINS"
 
     var icecream = "아이스크림"
@@ -7,69 +8,74 @@ fun main(){
     var cake = "케이크"
     var beverage = "음료"
 
-    displayInfo(storename,icecream,bingsu,cake,beverage)
+    displayInfo(storename, icecream, bingsu, cake, beverage)
 
-    while(true){
+    while (true) {
         println("[1]아이스크림, [2]빙수, [3]케이크, [4]음료")
-        var selectnumber= readLine()!!.toInt()
 
-        when(selectnumber){
-            1 -> {
-                selectmenu(1)
-                break
-            }
+        try {
+            val selectnumber = readLine()?.toInt() ?: throw Exception()
 
-            2 -> {
-                selectmenu(2)
-                break
-            }
+            when (selectnumber) {
+                1 -> {
+                    selectmenu(1)
+                    break
+                }
 
-            3 -> {
-                selectmenu(3)
-                break
-            }
+                2 -> {
+                    selectmenu(2)
+                    break
+                }
 
-            4 -> {
-                selectmenu(4)
-                break
+                3 -> {
+                    selectmenu(3)
+                    break
+                }
+
+                4 -> {
+                    selectmenu(4)
+                    break
+                }
+                else -> {
+                    println("잘못된 선택입니다. 다시 주문해 주세요.")
+                }
             }
-            else -> {
-                println("잘못선택하셨습니다.")
-                break
-            }
+        } catch (e: Exception) {
+            println("숫자를 입력해주세요.")
         }
     }
+}
+fun back() = main()
 
+fun selectmenu(selectnumber: Int) {
+    var ice = Ice(name = "", price = 0.0, info = "")
+    var bin = BingSu(name = "", price = 0.0, info = "")
+    var cak = Cake(name = "", price = 0.0, info = "")
+    var bev = Drink(name = "", price = 0.0, info = "")
 
+    when (selectnumber) {
+        1 -> {
+            ice.operation()
+        }
 
+        2 -> {
+            bin.operation()
+        }
+
+        3 -> {
+            cak.operation()
+        }
+
+        4 -> {
+            bev.operation()
+        }
+
+        else -> {
+            println("다시 입력해주세요.")
+        }
+    }
 }
 
-fun selectmenu(selectnumber: Int){
-    var ice = Ice(name= "", price = 0.0, info = "")
-    var bin = BingSu(name= "", price = 0.0, info = "")
-    var cak = Cake(name= "", price = 0.0, info = "")
-    var bev = Drink(name= "", price = 0.0, info = "")
-
-    if(selectnumber == 1){
-        ice.operation()
-    }
-
-    else if(selectnumber == 2){
-        bin.operation()
-    }
-
-    else if(selectnumber == 3){
-        cak.operation()
-    }
-
-    else if(selectnumber == 4){
-        bev.operation()
-    }
-
-    else {
-        println("다시입력해주세요.")
-    }
-}
 
 fun displayInfo(storename:String, icecream:String, bingsu:String, cake:String, beverage:String){
     println("========================${storename}에 오신것을 환영합니다.=========================")
@@ -106,5 +112,3 @@ fun displayInfo(storename:String, icecream:String, bingsu:String, cake:String, b
     println("")
 
 }
-
-

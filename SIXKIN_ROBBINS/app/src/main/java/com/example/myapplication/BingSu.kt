@@ -1,8 +1,8 @@
 package com.example.myapplication
 
 
-class BingSu(val name:String,val price:Double,val info:String) : menu() {
-    fun operation(){
+class BingSu(val name: String, val price: Double, val info: String) {
+    fun operation() {
         val RedBean = BingSu("팥빙수", 5.0, "빙수의 원조")
         val Mango = BingSu("망고빙수", 5.5, "달콤한 빙수의 정석 망고빙수")
         val Melon = BingSu("메론빙수", 5.5, "통통튀는 메론빙수")
@@ -12,6 +12,7 @@ class BingSu(val name:String,val price:Double,val info:String) : menu() {
 
 
         println("==========================음료를 선택해주세요.=========================")
+        println("0. 뒤로가기")
         println("1. 빙수 이름:${RedBean.name} ㅣ가격:${RedBean.price} ㅣ설명:${RedBean.info}")
         println("2. 빙수 이름:${Mango.name}ㅣ가격:${Mango.price}ㅣ설명:${Mango.info}")
         println("3. 빙수 이름:${Melon.name}ㅣ가격:${Melon.price}ㅣ설명:${Melon.info}")
@@ -22,18 +23,21 @@ class BingSu(val name:String,val price:Double,val info:String) : menu() {
         val choice = readLine()?.toInt()
 
         when (choice) {
+            0 -> back()
             1 -> order(RedBean)
             2 -> order(Mango)
             3 -> order(Melon)
             4 -> order(Cheese)
             5 -> order(Rise)
             6 -> order(Yogurt)
-            else-> println("다시 선택해 주세요.")
-
+            else -> {
+                println("다시 주문해 주세요")
+                operation()
+            }
         }
     }
 
-    fun order(BingSu:BingSu) {
+    fun order(BingSu: BingSu) {
         println("선택하신 빙수: ${BingSu.name}")
         println("가격: ${BingSu.price}")
         println("주문이 완료되었습니다.")
