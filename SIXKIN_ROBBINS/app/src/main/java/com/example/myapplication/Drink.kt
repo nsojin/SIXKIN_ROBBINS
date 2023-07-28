@@ -18,24 +18,44 @@ class Drink(val name:String,val price:Double,val info:String)  {
         println("4. 음료 이름:${apogato.name}ㅣ가격:${apogato.price}ㅣ설명:${apogato.info}")
         println("5. 음료 이름:${hotchocolate.name}ㅣ가격:${hotchocolate.price}ㅣ설명:${hotchocolate.info}")
         println("6. 음료 이름:${milkshake.name}ㅣ가격:${milkshake.price}ㅣ설명:${milkshake.info}")
-        try {
-            val choice = readLine()?.toInt()
+        while (true) {
+            try {
+                val choice = readLine()?.toInt() ?: throw Exception()
 
-            when (choice) {
-                0 -> back()
-                1 -> order(Americano)
-                2 -> order(Latte)
-                3 -> order(Cafemocha)
-                4 -> order(apogato)
-                5 -> order(hotchocolate)
-                6 -> order(milkshake)
-                else -> println("다시 선택해 주세요.")
+                when (choice) {
+                    0 -> {
+                        back()
+                    break}
+                    1 -> {
+                        order(Americano)
+                    break}
+                    2 -> {
+                        order(Latte)
+                    break}
+                    3 -> {
+                        order(Cafemocha)
+                    break}
+                    4 -> {
+                        order(apogato)
+                    break}
+                    5 -> {
+                        order(hotchocolate)
+                    break}
+                    6 -> {
+                        order(milkshake)
+                    break}
+                    else -> {
+                        println("다시 선택해 주세요.")
+                        operation()
+                        break
+                    }
+                }
+            } catch (e: Exception) {
+                println("다시 주문해주세요.")
+                operation()
+                break
             }
-        } catch (e: Exception) {
-            println("다시 주문해주세요.")
-            return
         }
-        println()
     }
     fun order(Drink: Drink) {
         println("선택하신 음료: ${Drink.name}")

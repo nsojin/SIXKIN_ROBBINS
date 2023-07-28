@@ -20,19 +20,38 @@ class BingSu(val name: String, val price: Double, val info: String) {
         println("5. 빙수 이름:${Rise.name}ㅣ가격:${Rise.price}ㅣ설명:${Rise.info}")
         println("6. 빙수 이름:${Yogurt.name}ㅣ가격:${Yogurt.price}ㅣ설명:${Yogurt.info}")
 
-        val choice = readLine()?.toInt()
+        while (true) {
+            try {
+                val choice = readLine()?.toInt() ?: throw Exception()
 
-        when (choice) {
-            0 -> back()
-            1 -> order(RedBean)
-            2 -> order(Mango)
-            3 -> order(Melon)
-            4 -> order(Cheese)
-            5 -> order(Rise)
-            6 -> order(Yogurt)
-            else -> {
-                println("다시 주문해 주세요")
+                when (choice) {
+                    0 -> {
+                        back()
+                    break}
+                    1 -> {
+                        order(RedBean)
+                    break}
+                    2 -> {order(Mango)
+                    break}
+                    3 -> {order(Melon)
+                    break}
+                    4 -> {order(Cheese)
+                    break}
+                    5 -> {order(Rise)
+                    break}
+                    6 -> {order(Yogurt)
+                    break}
+                    else -> {
+                        println("다시 주문해 주세요")
+                        operation()
+                        break
+                    }
+                }
+            }
+            catch (e:Exception){
+                println("숫자를 입력해 주세요.")
                 operation()
+                break
             }
         }
     }
